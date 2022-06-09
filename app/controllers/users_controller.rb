@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # User controller
   def index
     @index = 'Posts on index def'
   end
