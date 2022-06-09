@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @index = 'Posts on index def'
   end
+
   # Post with given id
   def show
     @show = 'Posts on show def'
