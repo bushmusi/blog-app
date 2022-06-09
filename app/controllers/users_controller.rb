@@ -6,5 +6,4 @@ class UsersController < ApplicationController
   def show
     @show = 'Posts on show def'
   end
-
 end
