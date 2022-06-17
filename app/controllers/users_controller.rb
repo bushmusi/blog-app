@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   # User controller
   def index
-    @index = 'Posts on index def'
+    @users = all_users
   end
 
   def show
-    @show = 'Posts on show def'
+    @posts = fetch_posts
   end
 end
