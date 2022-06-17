@@ -1,2 +1,15 @@
-<h2>Here is a list of posts for a given user</h2>
-<i>you are looking: <%= @index %></i>
+<ul class="user-list">
+<% @users.each do |item| %>
+  <li>
+    <a class="list-item" href="/users/<%= item.id %>">
+      <div class="user-img">
+        <img src="<%= item.photo %>" alt="user-image">
+      </div>
+      <div class="user-desc">
+        <h3><%= item.name %></h3>
+        <p>Number of posts: <%= item.posts_counter %></p>
+      </div>
+    </a>
+  </li>
+<% end %>
+</ul>
