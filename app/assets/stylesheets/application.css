@@ -1,10 +1,21 @@
-ul.user-list {
+main {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-list {
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 a.list-item {
-  margin: 20px;
   display: flex;
   text-decoration: none;
   color: black;
@@ -26,4 +37,52 @@ a > div.user-desc {
 
 .user-desc > p {
   align-self: flex-end;
+}
+
+section {
+  margin: 20px 0;
+  padding: 0 20px;
+  border: 1px solid;
+}
+
+section.post-item {
+  padding-bottom: 10px;
+  flex: 1;
+}
+
+section.post-item > small {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.all-post {
+  display: flex;
+  justify-content: center;
+}
+
+#see-all-posts {
+  text-decoration: none;
+  padding: 20px;
+  border: 1px solid;
+}
+
+div.comment-block {
+  margin: 0 20px;
+  border: 1px solid;
+  padding: 10px;
+}
+
+div.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+div.pagination > i {
+  padding: 10px;
+  color: rgb(11, 117, 117);
+  cursor: pointer;
+}
+
+li.user-item {
+  padding-bottom: 10px;
 }
