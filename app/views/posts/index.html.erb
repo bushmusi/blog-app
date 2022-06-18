@@ -1,5 +1,8 @@
 <main>
   <%= render partial: "users/user", locals: { item: @user }%>
+    <%=link_to new_user_post_path do%>
+   <button class="create-post">Create post</button>
+  <%end%>
   <% @posts.each do |post|%>
     <%= render partial: "post_detail", locals: { post: post} %>
   <% end %>

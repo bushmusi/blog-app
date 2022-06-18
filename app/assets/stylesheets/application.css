@@ -86,3 +86,42 @@ div.pagination > i {
 li.user-item {
   padding-bottom: 10px;
 }
+
+div.action-links-box {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+input[type="submit"] {
+  margin: 0 20px;
+  padding: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+}
+
+textarea {
+  padding: 10px;
+}
+
+form#inputs {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  row-gap: 20px;
+  width: 50%;
+  padding: 30px;
+  border: 1px solid;
+}
+
+form#comment_form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  row-gap: 20px;
+  width: 50%;
+  padding: 30px;
+  border: 1px solid;
+}

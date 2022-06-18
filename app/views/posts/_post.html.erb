@@ -1,11 +1,12 @@
 <% posts.each do |post| %>
-  <a class="list-item post" href="<%= params[:user_id]%>/posts/<%= post.id %>">
+  <a class="list-item post" href="<%= params[:id]%>/posts/<%= post.id %>">
     <section class="post-item">
       <h4><%=post.title%></h4>
       <p><%=post.text%></p>
       <small class="post-meta-data">
           Comments: <%=post.comments_counter || "0" %>, Likes: <%=post.likes_counter || "0" %>
       </small>
+      <%=render partial:'likes/like', locals:{like:@like, post_id:post.id, distination:params[:action]}%>
     </section>
   </a>
 <% end %>

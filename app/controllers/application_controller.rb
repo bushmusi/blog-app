@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def current_user
-    User.find(params[:user_id])
+    User.find(params[:id] || params[:user_id])
   end
 
   def all_users
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_post
-    User.find(params[:user_id]).posts.find(params[:post_id])
+    User.find(params[:user_id]).posts.find(params[:id] || params[:post_id])
   end
 
   def all_posts
