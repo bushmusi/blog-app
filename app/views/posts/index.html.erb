@@ -1,2 +1,13 @@
-<h2>Here is a list of posts for a given user</h2>
-<i>you are looking: <%= @index %></i>
+<main>
+  <%= render partial: "users/user", locals: { item: @user }%>
+  <% @posts.each do |post|%>
+    <%= render partial: "post_detail", locals: { post: post} %>
+  <% end %>
+  <div class="pagination">
+    <i>Prev</i>
+    <i>1</i>
+    <i>2</i>
+    <i>3</i>
+    <i>Next</i>
+  </div>
+</main>

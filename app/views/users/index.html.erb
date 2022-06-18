@@ -1,2 +1,5 @@
-<h2>Here is a list of posts for a given user</h2>
-<i>you are looking: <%= @index %></i>
+<ul class="user-list">
+<% @users.each do |item| %>
+  <%= render partial: 'user', locals: {item: item}%>
+<% end %>
+</ul>

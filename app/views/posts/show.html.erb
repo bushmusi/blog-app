@@ -1,2 +1,1 @@
-<h2>Here is a list of posts for a given user</h2>
-<i>you are looking: <%= @show %></i>
+<%= render partial: "post_detail", locals: {post: @current_post}%>

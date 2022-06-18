@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   # Post index func
   def index
-    @index = 'Posts on index def'
+    @user = current_user
+    @posts = @user.posts.order('id asc')
   end
 
   # Post with given id
   def show
-    @show = 'Posts on show def'
+    @current_post = current_post
   end
 end

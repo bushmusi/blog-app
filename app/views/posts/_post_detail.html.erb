@@ -1,0 +1,10 @@
+<a class="list-item post" href="posts/<%= post.id %>">
+    <section class="post-item">
+      <h4><%=post.title%></h4>
+      <p><%=post.text%></p>
+      <small class="post-meta-data">
+          Comments: <%=post.comments_counter || "0" %>, Likes: <%=post.likes_counter || "0" %>
+      </small>
+    </section>
+</a>
+<%= render partial: 'comment', locals: {comments: post.recent_comments} %>
