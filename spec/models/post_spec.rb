@@ -42,4 +42,14 @@ RSpec.describe Post, type: :model do
     test_case.likes_counter = 'hi'
     expect(test_case).to_not be_valid
   end
+  it 'comments counter is greater than or equal zero' do
+    test_case = subject
+    test_case.likes_counter = 2
+    test_case.comments_counter = -1
+    expect(test_case).to_not be_valid
+    test_case.comments_counter = 0
+    expect(test_case).to be_valid
+    test_case.comments_counter = 1
+    expect(test_case).to be_valid
+  end
 end
