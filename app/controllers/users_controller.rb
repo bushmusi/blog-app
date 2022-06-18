@@ -5,6 +5,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = fetch_posts
+    @user = current_user
   end
 end
