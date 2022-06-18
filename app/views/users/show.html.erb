@@ -1,3 +1,8 @@
-<% @posts.each do |item| %>
- <% item %>
-<% end %>
+<main>
+  <%= render partial: "user", locals: {item: @user} %>
+  <%= render partial: "bio" , locals:{bio:@user.bio}%>
+  <%= render partial: "posts/post", locals: {posts: @user.fetch_posts} %>
+  <div class="all-post">
+    <a href="<%= @user.id %>/posts" id="see-all-posts"> See all posts</a>
+  </div>
+</main>
