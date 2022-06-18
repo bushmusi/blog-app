@@ -6,5 +6,13 @@
           Comments: <%=post.comments_counter || "0" %>, Likes: <%=post.likes_counter || "0" %>
       </small>
     </section>
+
+    <div class="action-links-box">
+      <%=link_to new_user_post_comment_path(post_id:post.id) do%>
+        <button class="create-comment">Create comment</button>
+      <%end%>
+      <%=render partial:'likes/like', locals:{like:@like,post_id:post.id,distination:params[:action]}%>
+    </div>
+
 </a>
 <%= render partial: 'comment', locals: {comments: post.recent_comments} %>
