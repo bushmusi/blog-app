@@ -1,15 +1,5 @@
 <ul class="user-list">
 <% @users.each do |item| %>
-  <li>
-    <a class="list-item" href="/users/<%= item.id %>">
-      <div class="user-img">
-        <img src="<%= item.photo %>" alt="user-image">
-      </div>
-      <div class="user-desc">
-        <h3><%= item.name %></h3>
-        <p>Number of posts: <%= item.posts_counter %></p>
-      </div>
-    </a>
-  </li>
+  <%= render partial: 'user', locals: {item: item}%>
 <% end %>
 </ul>
