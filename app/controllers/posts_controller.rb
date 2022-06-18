@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # Post index func
   def index
     @user = current_user
-    @posts = @user.posts.order('id asc')
+    @posts = @user.posts.includes(:comments).order('id asc')
   end
 
   # Post with given id
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     user.save
     post = Post.new(post_params)
     post.author = user
+    post.comments_counter = post.likes_counter = 0
     if post.save
       flash[:success] = 'Post saved successfully'
       redirect_to user_posts_url
