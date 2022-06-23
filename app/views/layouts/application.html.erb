@@ -11,6 +11,13 @@
   </head>
 
   <body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div id="sign_out">
+        <% if user_signed_in? %>
+            <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+      </div>
      <%if flash[:error]%>
        <p id="red"><%=flash[:error]%></p>
      <%end%>
@@ -24,6 +31,6 @@
     <%
      flash[:error] = nil
      flash[:success] = nil
-    %> 
+    %>
   </body>
 </html>
