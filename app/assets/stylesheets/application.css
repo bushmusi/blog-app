@@ -125,3 +125,19 @@ form#comment_form {
   padding: 30px;
   border: 1px solid;
 }
+
+form.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.field {
+  width: 45%;
+}
+
+div.auth_links {
+  display: flex;
+  column-gap: 10px;
+  justify-content: flex-start;
+}
