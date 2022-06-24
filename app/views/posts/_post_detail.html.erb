@@ -9,8 +9,16 @@
 
     <div class="action-links-box">
       <%=link_to new_user_post_comment_path(post_id:post.id) do%>
-        <button class="create-comment">Create comment</button>
+        <button class="create-comment">Create comment </button>
       <%end%>
+
+
+      <% if can? :destroy, @current_post %>
+        <% if @current_post %>
+          <%= button_to "Delete post", user_post_path(user_id: @current_post.author.id, post_id: @current_post.id), method: :delete, class: "btn" %>
+        <% end %>
+      <% end %>
+
       <%=render partial:'likes/like', locals:{like:@like,post_id:post.id,distination:params[:action]}%>
     </div>
 
