@@ -3,4 +3,7 @@
     <span class="comment"><%=comment.author.name%>:</span>
     <span class="comment"><%=comment.text%></span>
   </div>
+  <% if can? :destroy, comment %>
+    <%= button_to "Delete", user_post_comment_path(post_id: comment.post.id, id: comment.id), method: :delete, class: "btn"  %>
+  <% end %>
 <% end %>

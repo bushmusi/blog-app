@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
   # Post index func
   def index
     @user = current_user
@@ -30,6 +31,14 @@ class PostsController < ApplicationController
       flash[:error] = 'Error: Post could not be saved'
       redirect_to new_user_post_url
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @author = @post.author
+    @author.decrement!(:posts_counter)
+    @post.destroy!
+    redirect_to user_posts_path(id: @author.id), notice: 'Post was deleted successfully!'
   end
 
   private
