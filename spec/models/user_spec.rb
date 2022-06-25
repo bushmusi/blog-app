@@ -3,7 +3,7 @@ RSpec.describe User, type: :model do
   describe 'validations for User model' do
     before(:each) do
       @user = User.new(name: 'Lynn', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                        email: 'bush7840@yahoo.com', password: '12345678')
+                       email: 'bush7840@yahoo.com', password: '12345678')
     end
     before { @user }
     it 'name is present' do
