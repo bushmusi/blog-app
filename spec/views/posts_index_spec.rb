@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Post index page', type: :feature do 
+RSpec.feature 'Post index page', type: :feature do
   before(:each) do
     User.destroy_all
     Post.destroy_all
