@@ -46,7 +46,6 @@ RSpec.feature 'Post index page', type: :feature do
     end
     it 'Should have comment says comment1' do
       visit user_post_path(@user1.id, @post1.id)
-      puts user_post_path(@user1.id, @post1.id)
       expect(page).to have_content('comment1')
     end
     it 'Comment and like num should exist' do

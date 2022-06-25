@@ -23,7 +23,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    puts params
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     if @comment.destroy
