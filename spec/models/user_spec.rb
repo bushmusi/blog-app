@@ -1,5 +1,27 @@
 require 'rails_helper'
-
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations for User model' do
+    before(:each) do
+      @user = User.new(name: 'Lynn', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                       email: 'bush7840@yahoo.com', password: '12345678')
+    end
+    before { @user }
+    it 'name is present' do
+      @user.name = nil
+      expect(@user).to_not be_valid
+    end
+    it 'name is not a string' do
+      @user.name = 7
+      expect(@user).to_not be_valid
+    end
+    it 'posts_counter is be greater than or eq to zero' do
+      @user.posts_counter = -1
+      expect(@user).to_not be_valid
+    end
+
+    it 'return less than 5 posts ' do
+      value = @user.fetch_posts.length
+      expect(value).to be < 5
+    end
+  end
 end
