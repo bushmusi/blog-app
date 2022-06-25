@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Login Page', type: :feature do
   before(:each) do
     @bush = User.create(name: 'Bushra', photo: 'bushra.png', bio: 'Software developer',
-                        email: 'bush7840@yahoo.com', password: '12345678')
+                        email: 'bush7840@yahoo.com', password: '12345678', confirmed_at: Time.now)
     @lynet = User.create(name: 'user2', photo: 'user2.png', bio: 'Software developer',
                          email: 'user2@yahoo.com', password: '12345678')
     @tufahel = User.create(name: 'user3', photo: 'user3.png', bio: 'Software developer',
@@ -18,8 +18,8 @@ RSpec.feature 'Login Page', type: :feature do
     background { visit root_path }
     scenario 'all users should be listed' do
       expect(page).to have_content('Bushra')
-      expect(page).to have_content('user1')
       expect(page).to have_content('user2')
+      expect(page).to have_content('user3')
     end
 
     scenario 'check users image loaded' do

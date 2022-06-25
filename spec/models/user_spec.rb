@@ -14,10 +14,6 @@ RSpec.describe User, type: :model do
       @user.name = 7
       expect(@user).to_not be_valid
     end
-    it 'photo url not a string' do
-      @user.photo = 1
-      expect(@user).to_not be_valid
-    end
     it 'posts_counter is be greater than or eq to zero' do
       @user.posts_counter = -1
       expect(@user).to_not be_valid

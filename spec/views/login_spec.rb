@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature 'Login Page', type: :feature do
   before(:each) do
     @user = User.create(name: 'Bushra', photo: 'bushra.png', bio: 'Software developer',
-                        email: 'bush7840@yahoo.com', password: '12345678')
+                        email: 'bush7840@yahoo.com', password: '12345678', 
+                        confirmed_at: Time.now )
   end
 
   background { visit new_user_session_path }
